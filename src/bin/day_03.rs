@@ -1,4 +1,6 @@
+#![feature(test)]
 #![feature(exclusive_range_pattern)]
+extern crate test;
 
 #[derive(Debug, PartialEq)]
 struct Rucksack<'a> {

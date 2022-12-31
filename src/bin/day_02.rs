@@ -1,3 +1,6 @@
+#![feature(test)]
+extern crate test;
+
 // A X- Rock
 // B Y - Paper
 // C Z- Scissors

@@ -1,3 +1,6 @@
+#![feature(test)]
+extern crate test;
+
 #[derive(Debug)]
 struct Tree {
     value: i32,

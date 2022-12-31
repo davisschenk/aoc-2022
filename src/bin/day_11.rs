@@ -1,3 +1,6 @@
+#![feature(test)]
+extern crate test;
+
 use regex::Regex;
 
 const MONKEY_REGEX: &str = r"Monkey (\d):\n +Starting items: ([\d, ]+)\n +Operation: new = (.*)\n +Test: divisible by (\d+)\n + If true: throw to monkey (\d)\n +If false: throw to monkey (\d)";

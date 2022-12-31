@@ -1,3 +1,6 @@
+#![feature(test)]
+extern crate test;
+
 use regex::Regex;
 
 #[derive(Debug)]

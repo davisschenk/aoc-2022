@@ -1,4 +1,7 @@
+#![feature(test)]
 #![feature(assert_matches)]
+extern crate test;
+
 use std::collections::HashSet;
 
 #[derive(Debug, PartialEq)]

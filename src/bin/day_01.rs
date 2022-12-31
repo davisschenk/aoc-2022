@@ -1,3 +1,6 @@
+#![feature(test)]
+extern crate test;
+
 type Elfs = Vec<Vec<u64>>;
 
 fn process_input(input: &str) -> Elfs {

@@ -1,3 +1,6 @@
+#![feature(test)]
+extern crate test;
+
 #[macro_export]
 macro_rules! aoc_problem {
     ($day:ident, $part_one:ident, $part_one_example_answer:literal, $part_one_answer:literal, $part_two:ident, $part_two_example_answer:literal, $part_two_answer:literal) => {
@@ -12,6 +15,9 @@ macro_rules! aoc_problem {
 
         #[cfg(test)]
         mod $day {
+            use test::{Bencher, black_box};
+            use super::*;
+
             #[test]
             fn test_example_part_one() {
                 let result = crate::$part_one(crate::EXAMPLE_INPUT);
@@ -35,7 +41,16 @@ macro_rules! aoc_problem {
                 let result = crate::$part_two(crate::INPUT);
                 assert_eq!(result, $part_two_answer);
             }
-        }
 
+            #[bench]
+            fn bench_part_one(b: &mut Bencher) {
+                b.iter(|| crate::$part_one(black_box(crate::INPUT)));
+            }
+
+            #[bench]
+            fn bench_part_two(b: &mut Bencher) {
+                b.iter(|| crate::$part_two(black_box(crate::INPUT)));
+            }
+        }
     }
 }

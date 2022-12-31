@@ -1,3 +1,6 @@
+#![feature(test)]
+extern crate test;
+
 #[derive(Debug)]
 enum Instruction {
     Noop,
